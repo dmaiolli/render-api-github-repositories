@@ -60,7 +60,7 @@ class App{
     }
 
     render(){
-        this.listEl.innerHTML = ''; // Apaga tudo que ja tem
+        this.listEl.innerHTML = ''; // Apaga tudo oque ja esta renderizado
 
         this.repositories.forEach(repo => {
             let imgEl = document.createElement('img');
