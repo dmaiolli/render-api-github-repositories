@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-    <form id="repo-form">
-        <label for="repository">Busque por repositórios no github</label> <br>
-        <input type="text" name="repository">
-        <button type="submit">Adicionar</button>
-    </form>
 
-    <ul id="repo-list"></ul>
-    
+<body>
+
+    <header>
+        <div class="input-form">
+            <form id="repo-form">
+                <div class="repo-title">
+                    <h3>Importe repositórios de algum usuário</h3>
+                    <p>Busque pelo usuário desejado</p>
+                </div>
+                <div class="repo-input">
+                    <input type="text" name="repository">
+                    <button type="submit">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <ul id="repo-list">
+        </ul>
+    </main>
+
+
     <script src="./bundle.js"></script>
 </body>
+
 </html>
