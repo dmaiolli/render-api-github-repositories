@@ -38,22 +38,30 @@ class App{
         this.setLoading();
 
         try{
-            const response = await api.get(`/repos/${repoInput}`)
+            const response = await api.get(`/users/${repoInput}/repos`)
             
-            const { name, description, html_url, owner: { avatar_url }} = response.data
+            console.log(response.status);
+            console.log(response.data);
             
-            this.repositories.push({
-                name,
-                description,
-                avatar_url,
-                html_url
-            });
+            response.data.forEach(repo => {
+                const name = repo.name;
+                const description = repo.description;
+                const avatar_url = repo.owner.avatar_url
+                const html_url = repo.html_url
+                this.repositories.push({
+                    name,
+                    description,
+                    avatar_url,
+                    html_url
+                });
+            })
+            
             
             this.inputEl.value = '';
             
             this.render();
         } catch(err) {
-            alert('O repositório não existe')
+            console.log(err)
         }
 
         this.setLoading(false)
